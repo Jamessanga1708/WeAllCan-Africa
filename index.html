@@ -5,37 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeAllCan Africa - Empowering Students for Success</title>
     <style>
-        /* Basic reset and styles */
+        /* Basic reset and styles with St Jude-inspired colors */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #FFFFFF; }
         
-        /* Navigation */
-        header { background: #007BFF; color: white; padding: 10px; }
+        /* Navigation - Dark green like St Jude */
+        header { background: #006341; color: white; padding: 10px; }
         nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
         nav .logo { display: flex; align-items: center; }
         nav .logo img { height: 50px; margin-right: 10px; }
         nav .logo h1 { font-size: 24px; }
         nav ul { list-style: none; display: flex; }
         nav ul li { margin-left: 20px; }
-        nav ul li a { color: white; text-decoration: none; }
+        nav ul li a { color: white; text-decoration: none; transition: color 0.3s; }
+        nav ul li a:hover { color: #00A651; }
         
-        /* Hero Section */
-        .hero { background: #28A745; color: white; text-align: center; padding: 100px 20px; }
+        /* Hero Section - Light green accent, big like St Jude's hero with stats */
+        .hero { background: #00A651; color: white; text-align: center; padding: 100px 20px; }
         .hero h2 { font-size: 36px; margin-bottom: 20px; }
-        .hero p { font-size: 18px; max-width: 800px; margin: auto; }
+        .hero p { font-size: 18px; max-width: 800px; margin: auto; margin-bottom: 20px; }
+        .hero .stats { display: flex; justify-content: center; gap: 20px; }
+        .hero .stats div { background: rgba(255,255,255,0.2); padding: 10px; border-radius: 5px; }
         
         /* Sections */
         section { padding: 50px 20px; max-width: 1200px; margin: auto; }
-        .about, .impact { background: white; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h2 { color: #007BFF; margin-bottom: 20px; }
+        .about, .impact, .gallery { background: white; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { color: #006341; margin-bottom: 20px; }
         .cta { text-align: center; }
-        .cta button { background: #28A745; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; }
+        .cta button { background: #007BFF; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; transition: background 0.3s; }
+        .cta button:hover { background: #0056b3; }
+        
+        /* Gallery - Impressive photo section */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-grid img { width: 100%; border-radius: 8px; cursor: pointer; transition: transform 0.3s; }
+        .gallery-grid img:hover { transform: scale(1.05); }
+        
+        /* Video Modal - Pop-up for videos */
+        .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background: rgba(0,0,0,0.8); }
+        .modal-content { margin: auto; display: block; width: 80%; max-width: 700px; padding: 20px; background: white; border-radius: 8px; position: relative; top: 50%; transform: translateY(-50%); }
+        .close { position: absolute; top: 10px; right: 25px; color: #333; font-size: 35px; font-weight: bold; cursor: pointer; }
         
         /* Responsive */
         @media (max-width: 768px) {
             nav ul { flex-direction: column; }
             nav ul li { margin: 10px 0; }
             .hero { padding: 60px 20px; }
+            .hero .stats { flex-direction: column; }
         }
     </style>
 </head>
@@ -59,45 +74,78 @@
     <section id="home" class="hero">
         <h2>A Journey of Hope and Empowerment</h2>
         <p>WeAllCanAfrica is an organized group of Youth who ought to solve the community’s worst challenges. We focus on embarking our efforts in creating a change!, a change within the few mighty-minded students who just fail in school by not understanding HOW! to actually ultimately write Exam papers. It's not that they don't know what to write but HOW to go whereabout. It's time to End this; It's NOW!</p>
+        <div class="stats">
+            <div><strong>800+</strong> Students Impacted</div>
+            <div><strong>70%</strong> Academic Improvement</div>
+            <div><strong>5</strong> Schools Visited</div>
+        </div>
+        <button onclick="openModal()">Watch Our Story</button>
     </section>
 
     <section id="about" class="about">
         <h2>About Us</h2>
-        <p>In May 2024, fresh out of high school, I stumbled upon something that changed my perspective forever. It was a simple essay question on my younger sibling's exam paper: “The Importance of Studying History.” ... [Full content from your PDF here—I've shortened for brevity, but paste the rest in!]</p>
-        <p>As the founder and leader, I am deeply involved in every aspect—from planning sessions to delivering them, and from mentoring my team to engaging directly with the students.</p>
+        <p>In May 2024, fresh out of high school, I stumbled upon something that changed my perspective forever... [Paste full PDF content here for the full story].</p>
     </section>
 
     <section id="programs">
         <h2>Our Programs</h2>
-        <p>Every Saturday, we visit government schools, offering free training sessions to candidate classes. We teach them how to craft exemplary essays, overcome examination anxiety, and manage the precious three hours of their exam time effectively.</p>
-        <p>As WeAllCan Africa grows, we plan to expand our offerings to include public speaking, debate, and leadership development.</p>
+        <p>Every Saturday, we visit government schools, offering free training on essays, anxiety management, and time skills. Expanding to public speaking and leadership soon.</p>
     </section>
 
     <section id="impact" class="impact">
         <h2>Our Impact</h2>
-        <p>In just two months, we’ve visited five schools and interacted with more than 800 students. Watching their confidence grow and seeing over 70% improve academically has been one of the most fulfilling experiences.</p>
-        <p>These aren’t just statistics—they’re stories of young people realizing their potential, stories of dreams reignited.</p>
+        <p>Visited 5 schools, empowered 800+ students, with 70% showing academic gains—real stories of dreams reignited.</p>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <img src="photo1.jpg" alt="Students in session">
+            <img src="photo2.jpg" alt="Team volunteering">
+            <img src="photo3.jpg" alt="School visit impact">
+        </div>
     </section>
 
     <section id="get-involved" class="cta">
         <h2>Get Involved</h2>
-        <p>Join us in empowering the next generation! Volunteer, donate, or contact us today.</p>
+        <p>Join the movement—volunteer, donate, or contact us!</p>
         <button onclick="window.location.href='https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID';">Donate Now</button>
-        <!-- Replace with your actual donation link -->
     </section>
 
-    <footer style="background: #007BFF; color: white; text-align: center; padding: 20px;">
+    <footer style="background: #006341; color: white; text-align: center; padding: 20px;">
         <p>&copy; 2025 WeAllCan Africa. All rights reserved.</p>
     </footer>
 
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            <!-- Replace YOUR_VIDEO_ID with actual, e.g., dQw4w9WgXcQ for a placeholder -->
+        </div>
+    </div>
+
     <script>
-        // Simple smooth scrolling for nav links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
+
+        // Modal functions
+        function openModal() {
+            document.getElementById('videoModal').style.display = 'block';
+        }
+        function closeModal() {
+            document.getElementById('videoModal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('videoModal')) {
+                closeModal();
+            }
+        }
     </script>
 </body>
 </html>
