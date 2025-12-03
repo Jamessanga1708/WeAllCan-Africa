@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeAllCan Africa - Empowering Students for Success</title>
+    <style>
+        /* Basic reset and styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
+        
+        /* Navigation */
+        header { background: #007BFF; color: white; padding: 10px; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; }
+        nav .logo { display: flex; align-items: center; }
+        nav .logo img { height: 50px; margin-right: 10px; }
+        nav .logo h1 { font-size: 24px; }
+        nav ul { list-style: none; display: flex; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: white; text-decoration: none; }
+        
+        /* Hero Section */
+        .hero { background: #28A745; color: white; text-align: center; padding: 100px 20px; }
+        .hero h2 { font-size: 36px; margin-bottom: 20px; }
+        .hero p { font-size: 18px; max-width: 800px; margin: auto; }
+        
+        /* Sections */
+        section { padding: 50px 20px; max-width: 1200px; margin: auto; }
+        .about, .impact { background: white; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { color: #007BFF; margin-bottom: 20px; }
+        .cta { text-align: center; }
+        .cta button { background: #28A745; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul { flex-direction: column; }
+            nav ul li { margin: 10px 0; }
+            .hero { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="WeAllCan Africa Logo">
+                <h1>WeAllCan Africa</h1>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#get-involved">Get Involved</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>A Journey of Hope and Empowerment</h2>
+        <p>WeAllCanAfrica is an organized group of Youth who ought to solve the community’s worst challenges. We focus on embarking our efforts in creating a change!, a change within the few mighty-minded students who just fail in school by not understanding HOW! to actually ultimately write Exam papers. It's not that they don't know what to write but HOW to go whereabout. It's time to End this; It's NOW!</p>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>In May 2024, fresh out of high school, I stumbled upon something that changed my perspective forever. It was a simple essay question on my younger sibling's exam paper: “The Importance of Studying History.” ... [Full content from your PDF here—I've shortened for brevity, but paste the rest in!]</p>
+        <p>As the founder and leader, I am deeply involved in every aspect—from planning sessions to delivering them, and from mentoring my team to engaging directly with the students.</p>
+    </section>
+
+    <section id="programs">
+        <h2>Our Programs</h2>
+        <p>Every Saturday, we visit government schools, offering free training sessions to candidate classes. We teach them how to craft exemplary essays, overcome examination anxiety, and manage the precious three hours of their exam time effectively.</p>
+        <p>As WeAllCan Africa grows, we plan to expand our offerings to include public speaking, debate, and leadership development.</p>
+    </section>
+
+    <section id="impact" class="impact">
+        <h2>Our Impact</h2>
+        <p>In just two months, we’ve visited five schools and interacted with more than 800 students. Watching their confidence grow and seeing over 70% improve academically has been one of the most fulfilling experiences.</p>
+        <p>These aren’t just statistics—they’re stories of young people realizing their potential, stories of dreams reignited.</p>
+    </section>
+
+    <section id="get-involved" class="cta">
+        <h2>Get Involved</h2>
+        <p>Join us in empowering the next generation! Volunteer, donate, or contact us today.</p>
+        <button onclick="window.location.href='https://www.paypal.com/donate?hosted_button_id=YOUR_BUTTON_ID';">Donate Now</button>
+        <!-- Replace with your actual donation link -->
+    </section>
+
+    <footer style="background: #007BFF; color: white; text-align: center; padding: 20px;">
+        <p>&copy; 2025 WeAllCan Africa. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
